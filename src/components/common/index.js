@@ -1,3 +1,5 @@
+// pass through that imports and exports each of the components
+// requires named import of components
 export * from './Button';
 export * from './Card';
 export * from './CardSection';
