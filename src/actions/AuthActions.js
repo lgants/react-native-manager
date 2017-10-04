@@ -39,7 +39,7 @@ export const loginUser = ({ email, password }) => {
 };
 
 const loginUserFail = (dispatch) => {
-  dispatch({ 
+  dispatch({
     type: LOGIN_USER_FAIL
   });
 };

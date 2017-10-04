@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import firebase from 'firebase';
+import ReduxThunk from 'redux-thunk';
 import reducers from './reducers';
 import LoginForm from './components/LoginForm';
+import Router from './Router';
 
 
 class App extends Component {
@@ -21,9 +23,12 @@ class App extends Component {
     firebase.initializeApp(config);
   }
   render() {
+    const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
+
+    // empty object is optional initial app state
     return (
-      <Provider store={createStore(reducers)}>
-        <LoginForm />
+      <Provider store={store}>
+        <Router />
       </Provider>
     )
   }

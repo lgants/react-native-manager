@@ -73,11 +73,21 @@ const styles = {
   }
 };
 
+// NOTE removed when refactoring to destructure auth from state
+// const mapStateToProps = state => {
+//   return {
+//     email: state.auth.email,
+//     password: state.auth.error,
+//     error: state.auth.error
+//   }
+// };
+
 const mapStateToProps = ({ auth }) => {
   const { email, password, error, loading } = auth;
 
   return { email, password, error, loading };
 };
+
 
 export default connect(mapStateToProps, {
   emailChanged, passwordChanged, loginUser
