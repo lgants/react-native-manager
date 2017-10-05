@@ -50,5 +50,7 @@ const loginUserSuccess = (dispatch, user) => {
     payload: user
   });
 
+  // main method redirects to scene where key is 'main'
+  // since scene with key 'main' contains nested scenes, this will access the topmost scene, which is 'employeeList' 
   Actions.main();
 };

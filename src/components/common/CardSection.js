@@ -2,6 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 
 const CardSection = (props) => {
+  // style attribute can take an array; style on the right will overwrite style types on the left
   return (
     <View style={[styles.containerStyle, props.style]}>
       {props.children}

@@ -7,6 +7,8 @@ import {
   EMPLOYEE_SAVE_SUCCESS
 } from './types';
 
+// expecting action creator to be called with an object with a prop and value key
+// payload will be an object with prop and value keys
 export const employeeUpdate = ({ prop, value }) => {
   return {
     type: EMPLOYEE_UPDATE,
